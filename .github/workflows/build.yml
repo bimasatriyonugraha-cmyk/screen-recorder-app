@@ -26,16 +26,6 @@ jobs:
           java-version: "17"
           cache: gradle
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK packages and accept licenses
-        run: |
-          set +o pipefail
-          yes | sdkmanager --licenses > /dev/null
-          set -o pipefail
-          sdkmanager --install "platform-tools" "platforms;android-34" "build-tools;34.0.0"
-
       - name: Grant execute permission to gradlew
         run: chmod +x gradlew
 
