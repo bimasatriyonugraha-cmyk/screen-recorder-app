@@ -1,14 +1,10 @@
-name: Android Build
+name: Android Build APK
 
 on:
   push:
-    paths:
-      - "src/android/**"
-      - ".github/workflows/build.yml"
+    branches: ["main"]
   pull_request:
-    paths:
-      - "src/android/**"
-      - ".github/workflows/build.yml"
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -16,11 +12,8 @@ permissions:
 
 jobs:
   assemble-debug:
-    name: Assemble debug APK
+    name: Assemble Debug APK
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/android
 
     steps:
       - name: Check out repository
@@ -36,14 +29,15 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Android 14 SDK packages and accept licenses
+      - name: Install Android SDK packages and accept licenses
         run: |
-          # sdkmanager exits successfully after the last prompt; without pipefail, the
-          # producer's expected SIGPIPE from `yes` does not fail this step.
           set +o pipefail
           yes | sdkmanager --licenses > /dev/null
           set -o pipefail
           sdkmanager --install "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x gradlew
 
       - name: Assemble debug APK
         run: ./gradlew --no-daemon --stacktrace :app:assembleDebug
@@ -52,6 +46,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screen-recorder-app-debug
-          path: src/android/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
