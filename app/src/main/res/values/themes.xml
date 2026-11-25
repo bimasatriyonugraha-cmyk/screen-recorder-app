@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Forced dark: the recorder UI is a camera-style surface, and a light-mode flip would
+         leave the hardcoded panel colours unreadable. Material3 provides the widget styles. -->
+    <style name="Theme.ScreenRecorder" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/rec_red</item>
+        <item name="colorOnPrimary">@color/text_on_accent</item>
+        <item name="colorSecondary">@color/rec_amber</item>
+        <item name="colorOnSecondary">@color/bg_deep</item>
+        <item name="colorTertiary">@color/rec_teal</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_hi</item>
+        <item name="colorOnSurfaceVariant">@color/text_lo</item>
+        <item name="colorOutline">@color/stroke</item>
+        <item name="android:colorBackground">@color/bg_deep</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
+        <item name="android:navigationBarColor">@color/bg_deep</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Record.Dialog</item>
+    </style>
+
+    <style name="ThemeOverlay.Record.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/rec_red</item>
+        <item name="dialogCornerRadius" tools:targetApi="28">28dp</item>
+    </style>
+
+    <style name="SectionLabel" parent="">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textColor">@color/text_lo</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ShapeAppearance.Record.Thumb" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+</resources>

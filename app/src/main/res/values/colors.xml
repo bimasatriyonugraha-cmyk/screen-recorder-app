@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_deep">#0F1519</color>
+    <color name="bg_card">#171F25</color>
+    <color name="bg_pill">#1F2A31</color>
+    <color name="stroke">#2A363E</color>
+
+    <color name="text_hi">#F3F6F7</color>
+    <color name="text_lo">#8E9EA8</color>
+    <color name="text_on_accent">#140A08</color>
+
+    <color name="rec_red">#FF4B3E</color>
+    <color name="rec_red_dim">#5A1F1A</color>
+    <color name="rec_amber">#F5B942</color>
+    <color name="rec_teal">#3FD0A8</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>

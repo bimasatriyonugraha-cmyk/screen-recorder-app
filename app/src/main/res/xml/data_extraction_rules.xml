@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Referenced from android:dataExtractionRules. The root element is data-extraction-rules
+  itself (NOT <resources>): a wrapper here makes aapt2 reject the file.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="external" path="." />
+        <exclude domain="sharedpref" path="recorder_prefs.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="external" path="." />
+    </device-transfer>
+</data-extraction-rules>

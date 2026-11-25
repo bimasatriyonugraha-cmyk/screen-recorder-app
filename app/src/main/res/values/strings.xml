@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Screen Recorder</string>
+    <string name="app_subtitle">MediaProjection · MediaRecorder · scoped storage</string>
+
+    <string name="timer_zero">00:00</string>
+    <string name="button_start">Start recording</string>
+    <string name="button_stop">Stop and save</string>
+    <string name="button_preparing">Preparing encoder…</string>
+    <string name="button_saving">Muxing file…</string>
+
+    <string name="status_idle">Idle</string>
+    <string name="status_preparing">Preparing</string>
+    <string name="status_recording">Recording</string>
+    <string name="status_saving">Saving</string>
+    <string name="status_error">Stopped</string>
+    <string name="status_saved">Saved to Movies/ScreenRecorder</string>
+
+    <string name="label_quality">Resolution</string>
+    <string name="label_frame_rate">Frame rate</string>
+    <string name="resolution_720">720p</string>
+    <string name="resolution_1080">1080p</string>
+    <string name="frame_rate_30">30 FPS</string>
+    <string name="frame_rate_60">60 FPS</string>
+    <string name="label_mic">Record microphone audio</string>
+    <string name="label_mic_hint">Adds a 128 kbps AAC track from MIC. With it off the session is video-only and RECORD_AUDIO is never requested.</string>
+
+    <string name="spec_summary">%1$d × %2$d · %3$d FPS · %4$d Mbps · ≈ %5$d MB / min</string>
+    <string name="save_location">Saving to %1$s</string>
+    <string name="written_estimate">≈ %1$s written</string>
+
+    <string name="label_recordings">Library</string>
+    <plurals name="recordings_count">
+        <item quantity="one">%d file</item>
+        <item quantity="other">%d files</item>
+    </plurals>
+    <string name="recordings_empty">No recordings yet. Your first take lands in Movies/ScreenRecorder and appears here the moment it is published.</string>
+    <string name="action_refresh">Reload the list from MediaStore</string>
+    <string name="action_play">Play recording</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialog_delete_title">Delete this recording?</string>
+    <string name="dialog_delete_message">%1$s is removed from the shared Movies collection. This cannot be undone.</string>
+    <string name="toast_deleted">Recording deleted</string>
+    <string name="chooser_play">Play with…</string>
+    <string name="recording_dimensions">%1$d × %2$d</string>
+    <string name="footer_note">No WRITE_EXTERNAL_STORAGE: MediaStore owns the file, the Media Scanner indexes it on publish.</string>
+
+    <!-- Foreground service notification -->
+    <string name="notif_recording">Recording your screen</string>
+    <string name="notif_preparing">Preparing the encoder</string>
+    <string name="notif_saving">Saving the video…</string>
+    <string name="notif_stopped">Recording finished</string>
+    <string name="notif_mic_on">Mic on</string>
+    <string name="notif_mic_off">Silent</string>
+    <string name="notif_action_stop">Stop recording</string>
+    <string name="notif_projection_revoked">Screen capture access ended</string>
+
+    <!-- Errors and warnings -->
+    <string name="error_consent_missing">No capture consent received. Open the app and approve the system dialog.</string>
+    <string name="error_start_failed">The encoder could not be started. Try 720p/30 FPS.</string>
+    <string name="error_encoder">Encoder error (%1$d). The take was discarded.</string>
+    <string name="error_max_duration">Three hour limit reached — file saved.</string>
+    <string name="error_no_frames">Nothing was captured, so no file was saved.</string>
+    <string name="error_service_blocked">Android refused the foreground service. Bring the app to the foreground and try again.</string>
+    <string name="error_projection_unavailable">The system screen-capture dialog is unavailable on this device.</string>
+    <string name="error_no_player">No app can play MP4 files.</string>
+    <string name="error_delete_denied">MediaStore refused the delete request.</string>
+    <string name="warn_notifications_denied">Notifications are off, so the Stop button in the shade will be missing. Recording still works.</string>
+    <string name="warn_mic_denied">Microphone denied — recording video only.</string>
+    <string name="warn_capture_cancelled">Screen-capture consent cancelled.</string>
+</resources>
