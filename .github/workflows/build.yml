@@ -25,10 +25,13 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Install Gradle CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gradle
+
       - name: Assemble debug APK
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: --no-daemon --stacktrace :app:assembleDebug
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
 
       - name: Upload app-debug.apk
         uses: actions/upload-artifact@v4
